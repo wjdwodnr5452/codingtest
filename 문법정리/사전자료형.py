@@ -27,6 +27,11 @@ print(key_list)
 for key in key_list:
     print(data[key])
 
+# 각 키에 따른 값을 하나씩 출력
+for key in key_list:
+    print(data[key])
+
+
 
 
 

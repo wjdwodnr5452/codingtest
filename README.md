@@ -103,6 +103,20 @@
 
 ##### 리스트 
 - list.sort(key=len) - 리스트 값 길이에 따라 정렬 시켜줌
+
+##### 소수점
+```
+# 참고 사이트 - https://jsikim1.tistory.com/223
+print("기존 값 : ", num)
+print("1 의 자리에서 반올림 : ", round(num, -1))
+print("10 의 자리에서 반올림 : ", round(num, -2))
+print("100 의 자리에서 반올림 : ", round(num, -3))
+print("1000 의 자리에서 반올림 : ", round(num, -4))
+print("소수 첫번째 자리에서 반올림 : ", round(num))
+print("소수 두번째 자리에서 반올림 : ", round(num, 1))
+print("소수 세번째 자리에서 반올림 : ", round(num, 2))
+print("소수 네번째 자리에서 반올림 : ", round(num, 3))
+```
   
 
 

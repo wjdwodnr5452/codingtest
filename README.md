@@ -102,7 +102,16 @@
 - sys.stdin.readline().strip() - 맨 앞과 맨 끝에 공백을 제거하고 입력됨 보통 문자열을 입력할 때 사용
 
 ##### 리스트 
-- list.sort(key=len) - 리스트 값 길이에 따라 정렬 시켜줌
+1. 리스트 값 길이에 따라 정렬 시켜줌
+```
+  list.sort(key=len) 
+```
+2. n번째 까지 받아서 2차 배열 만들기
+```
+N = int(input())
+arr = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
+``` 
+
 
 ##### 소수점
 ```

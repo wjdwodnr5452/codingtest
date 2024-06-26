@@ -14,6 +14,7 @@ result = 0
 
 # 빙고 index 값 가져오기
 def bingo_index_check(value) :
+    global result
     for i in range(len(bingo_arr)) :
         for j in range(len(bingo_arr[i])) :
             if(bingo_arr[i][j] == value) :

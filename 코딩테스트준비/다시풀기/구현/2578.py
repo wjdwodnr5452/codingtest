@@ -18,8 +18,8 @@ def bingo_index_check(value) :
     for i in range(len(bingo_arr)) :
         for j in range(len(bingo_arr[i])) :
             if(bingo_arr[i][j] == value) :
+                result += 1
                 return i, j
-
 
 # 세로줄 
 def bingo_check_y() :
@@ -71,28 +71,20 @@ def bing_check_right() :
         bingo += 1
     return bingo
 
-
-
 # 사회자 부른 값을 빙고판 위치 가져오기
-count = 0
 for i in bingo_value :
     for j in i :
+        count = 0
         # 인덱스 정보 가져오기
         y, x = bingo_index_check(j)
         # 해당 인덱스에 표시
         bingo_check[y][x] = 1
-        if(bingo_check_y() == 1) :
-            count += 1
-        if(bingo_check_x() == 1) :
-            count += 1
-        if(bigo_check_left() == 1) :
-            count += 1
-        if(bing_check_right() == 1) :
-            count += 1
-        result += 1
+        count += bingo_check_y() 
+        count += bingo_check_x()
+        count += bigo_check_left()
+        count += bing_check_right()
         if(count >= 3) :
-            break
+            print(result)    
+            exit()
 
-
-print(result)        
-
+    

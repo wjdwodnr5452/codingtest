@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(10**8) 
+
 n = int(input())
 
 graph = []
@@ -16,13 +19,16 @@ def dfs(x, y):
 
     global count
 
-    for i in range(4):
-        nx = dx[i] + x
-        ny = dy[i] + y
+    if x < 0 or x >= n or y < 0 or y >= n:
+        return
 
-        if((0 <= nx < n) and (0 <= ny < n)) and not graph_check[nx][ny] and graph[nx][ny] == 1:
-            count += 1
-            graph_check[nx][ny] = True
+    if graph[x][y] == 1 and not graph_check[x][y]:
+        count += 1
+        graph_check[x][y] = True
+
+        for i in range(4):
+            nx = dx[i] + x
+            ny = dy[i] + y
             dfs(nx, ny)
 
 for i in range(n) :

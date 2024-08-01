@@ -1,13 +1,22 @@
 import sys
 
+def binary_search
+
 n, h = map(int, sys.stdin.readline().split())
 
-arr = []
+bottom_arr = []
+top_arr = []
 
 for i in range(n) :
-    arr.append(int(sys.stdin.readline()))
+    if(i % 2 != 0) :
+         bottom_arr.append(int(sys.stdin.readline()))
+    else :
+         top_arr.append(int(sys.stdin.readline()))
 
-arr.sort()
+bottom_arr.sort()
+top_arr.sort()
 
-print(arr)
+result_arr = []
 
+for i in range(n) :
+     print()

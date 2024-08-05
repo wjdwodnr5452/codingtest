@@ -96,41 +96,7 @@
 - 사전 자료형과 집합 자료형은 순서가 없기 때문에 인덱싱으로 값을 얻을 수 없음
   - 사전의 키 혹은 집합의 원소를 이용해 O(1)의 시간 복잡도로 조회한다.
   
-# 문제 풀다가 참고
-##### 입력
-- sys.stdin.readline() - input()은 비교적으로 느려서 sys.stdin.readline()이 빠르다.
-- sys.stdin.readline().strip() - 맨 앞과 맨 끝에 공백을 제거하고 입력됨 보통 문자열을 입력할 때 사용
 
-##### 리스트 
-1. 리스트 값 길이에 따라 정렬 시켜줌
-```
-  list.sort(key=len) 
-```
-2. n번째 까지 받아서 2차 배열 만들기
-```
-N = int(input())
-arr = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
-``` 
-
-
-##### 소수점
-```
-# 참고 사이트 - https://jsikim1.tistory.com/223
-print("기존 값 : ", num)
-print("1 의 자리에서 반올림 : ", round(num, -1))
-print("10 의 자리에서 반올림 : ", round(num, -2))
-print("100 의 자리에서 반올림 : ", round(num, -3))
-print("1000 의 자리에서 반올림 : ", round(num, -4))
-print("소수 첫번째 자리에서 반올림 : ", round(num))
-print("소수 두번째 자리에서 반올림 : ", round(num, 1))
-print("소수 세번째 자리에서 반올림 : ", round(num, 2))
-print("소수 네번째 자리에서 반올림 : ", round(num, 3))
-```
-
-
-
-
-  
 
 
 

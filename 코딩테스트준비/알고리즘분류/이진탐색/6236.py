@@ -12,16 +12,18 @@ def binary_search(start, end, target) :
         count = 1
 
         for i in arr :
-            print("i : ", i)
             if(money >= i) :
                 money -= i
-                print("money : ", money)
             else :
-                count += 1
-                money = money_arr[mid]
+                count += i // money_arr[mid]
+                if(i % money_arr[mid] == 0) :
+                    count += 1
+                    money = money_arr[mid]
+                else :
+                    count += 1
+                    money = money_arr[mid] - (i % money_arr[mid])
 
         if target <= count :
-            print("count : " , count)
             start = mid + 1 
             result = money_arr[mid]
         else :
@@ -29,14 +31,12 @@ def binary_search(start, end, target) :
     return result
 
     
-
 for i in range(n) : 
     arr.append(int(sys.stdin.readline()))
 
 arr.sort()
 money_arr = list(set(arr))
 
-
 result = binary_search(0, len(money_arr)-1, m)
 
-print("result : " , result)
+print(result)

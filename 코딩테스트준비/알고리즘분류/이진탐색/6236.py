@@ -2,41 +2,40 @@ import sys
 
 n, m = map(int, sys.stdin.readline().split())
 
-arr = []
 
 def binary_search(start, end, target) :
-    result = 0
+    
+    result_money = 0
+
     while start <= end :
         mid = (start + end) // 2
-        money = money_arr[mid]
+        money = mid
+
         count = 1
 
-        for i in arr :
-            if(money >= i) :
-                money -= i
-            else :
-                count += i // money_arr[mid]
-                if(i % money_arr[mid] == 0) :
-                    count += 1
-                    money = money_arr[mid]
-                else :
-                    count += 1
-                    money = money_arr[mid] - (i % money_arr[mid])
+        for i in money_arr :
+            if(money < i) :
+                money = mid
+                count += 1
+            money -= i
 
-        if target <= count :
-            start = mid + 1 
-            result = money_arr[mid]
+        if target < count or mid < max(money_arr) :
+            start = mid + 1
         else :
             end = mid - 1
-    return result
+            result_money = mid
 
-    
-for i in range(n) : 
-    arr.append(int(sys.stdin.readline()))
+    return result_money
+        
 
-arr.sort()
-money_arr = list(set(arr))
+money_arr = []
 
-result = binary_search(0, len(money_arr)-1, m)
+for i in range(n) :
+    money_arr.append(int(sys.stdin.readline()))
+
+min_money = min(money_arr)
+max_money = sum(money_arr)    
+
+result = binary_search(min_money, max_money, m)
 
 print(result)

@@ -12,7 +12,6 @@ def binary_search(start, end, target) :
         money = mid
 
         count = 1
-
         for i in money_arr :
             if(money < i) :
                 money = mid

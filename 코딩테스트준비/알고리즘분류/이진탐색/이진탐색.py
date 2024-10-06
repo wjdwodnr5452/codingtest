@@ -15,7 +15,6 @@ def binary_search(array, target, start, end) :
     else :
         return binary_search(array, target, mid + 1, end)
 
-
 #n(원소의 개수)와 target(찾고자 하는 값)을 입력 받기
 n, target = list(map(int, input().split()))
 

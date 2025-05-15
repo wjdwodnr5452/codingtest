@@ -21,5 +21,3 @@ c_arr.sort()
 
 
 print(c_arr)
-
-

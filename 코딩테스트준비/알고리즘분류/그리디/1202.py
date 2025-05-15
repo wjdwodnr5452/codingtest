@@ -19,6 +19,7 @@ for j in range(k) :
 
 c_arr.sort()
 
+
 print(c_arr)
 
 

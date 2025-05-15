@@ -1,51 +1,59 @@
-n, h = map(int, input().split())
+import sys
 
-top_arr = [] # 종유석
-bottom_arr = [] # 석순
+n, h = map(int, sys.stdin.readline().split())
+
+def h_count(hegiht, target) :
+    count = 0
+    for i in target :
+        if(hegiht <= i) :
+            count += 1
+    return count
 
 
-# 종유석 구하기 첫번째 (7 - 1 + 1) 두번째 (7 - 2 + 1)
-
-def binary_search(arr, target) :
-    bottom = 0
-    top = len(arr) - 1
-
-    while bottom <= top :
-        mid = (bottom + top) // mid
-        arr[mid] 
-        if(arr[mid] <= target) :
-            bottom = mid +1
-        else :
-            bottom = mid - 1 
-
-    
-    
-
+right = []
+left = []
 
 for i in range(n) :
-    if (i % 2 == 0) :
-        top_arr.append(int(input()))
+    if(i % 2 == 0) :
+        left.append(int(sys.stdin.readline()))
     else :
-        bottom_arr.append(int(input()))
+        right.append(int(sys.stdin.readline()))
 
-top_arr.sort()
-bottom_arr.sort()
+right.sort()
+left.sort()
+
+result = n
+
+result_count = 0
+
+for i in range(1, h+1) :
+
+    right_cnt = h_count(i, right)
+    left_cnt = h_count((h-i)+1, left)
+
+    if(result > right_cnt + left_cnt) :
+        result = right_cnt + left_cnt
+        result_count = 1
+    elif(result == right_cnt + left_cnt) :
+        result_count += 1
 
 
-for i in range(h+1) :
-    bottom_height = i+1
-    top_height = (h-i)+1
+print(result, result_count)
+    
 
-    bottom_cnt = binary_search(bottom_arr, bottom_height)
-    top_cnt = binary_search(top_arr, top_height)
-
-
-
-#binary_search(1, h)
+    
 
 
 
 
-        
+
+
+
+
+
+
+
+
+
 
 

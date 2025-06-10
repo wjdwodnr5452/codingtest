@@ -14,6 +14,7 @@ for i in range(n) :
 d[0] = arr[0]
 d[1] = arr[1]
 
+
 for i in range(2, n) :
     print(i)
     n1 = (d[i-2] + arr[i])
